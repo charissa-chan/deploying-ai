@@ -11,7 +11,9 @@ from langchain_core.messages import SystemMessage,  HumanMessage
 import json
 import requests
 
-
+from assignment_chat.tools_dictionary import get_definition
+from assignment_chat.tools_random_fact import get_random_fact
+from assignment_chat.tools_search_facts import search_facts
 
 from utils.logger import get_logger
 
@@ -26,9 +28,9 @@ chat_agent = init_chat_model(
     default_headers={"x-api-key": os.getenv("API_GATEWAY_KEY")})
 
 
-tools = []
+tools = [get_definition, get_random_fact, search_facts]
 
-instructions = "you are a helpful assistant"
+instructions = "you are a helpful assistant. Use the search facts tool to answer questions about facts. Only use information returned by the search tool. If the search tool does not return a relevant fact, explain that you cannot find relevant facts in your database. Do not make up facts."
 
 
 
