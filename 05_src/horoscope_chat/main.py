@@ -13,9 +13,15 @@ load_dotenv(".env")
 load_dotenv(".secrets")
 
 
-client = OpenAI()
+client = OpenAI(
+    base_url="https://k7uffyg03f.execute-api.us-east-1.amazonaws.com/prod/openai/v1",
+    api_key="any",
+    default_headers={
+        "x-api-key": os.getenv("API_GATEWAY_KEY")
+    }
+)
 
-open_ai_model = os.getenv("OPENAI_MODEL", "gpt-4")
+open_ai_model = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 
 tools = [
     {
