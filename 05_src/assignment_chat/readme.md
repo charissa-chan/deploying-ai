@@ -15,15 +15,19 @@ Much of this project, including some of the language used in this readme file, i
 + All restrictions and tone requirements are in the instructions prompt. You can find this in prompts.py.
 
 ### Service 1: Dictionary Lookup using API Call 
-Uses a dictionary API to retrieve word definitions. 
-
+Uses a dictionary API to retrieve word definitions based on user requests. 
+Users can retrieve definitions by specifying a word and requesting its meaning. 
 
 ### Service 2: Fun Facts Search through Semantic Query
-Allows users to search for relevant facts from a curated collection of interesting facts.
-
+Allows users to search for relevant facts about a range of topics from a curated collection of interesting facts. 
+Topics can include nature, animals, science, technology, inventions and other interesting facts about the human body and everyday life.
+Users can retrieve a fact by specifying a topic of interest and ask for a relevant piece of information.
 
 ### Service 3: Random Fact Generator
-Draws on the same dataset used for Service 2 to provide a random fact when asked.
+Draws on the same dataset used for Service 2 to provide a random fact.
+It allows users to discover interesting facts without providing a specific query.
+It complements the semantic search feature by providing a more exploratory way to interact with the knowledge base.
+Users can access this service by asking for fact without specifying a topic of interest.
 
 
 #### Note on Processing, Cleaning, and Creating Embeddings from Dataset
@@ -36,6 +40,7 @@ Draws on the same dataset used for Service 2 to provide a random fact when asked
 
 ## Implementation Decisions
 + Using a dataset of fun facts was allows control over what information is provided rather than relying fully on the language model’s generated knowledge. 
++ For the sake of simplicity in this assignment, I have opted to use only one dataset file to demonstrate implementation of embedding creation and usage of chromadb.
 + The chatbot was designed with an explorer’s guide communication style to make responses more engaging while maintaining an informative and educational tone.
 + Instructions were added to encourage the chatbot to state when no relevant information is available instead of generating unsupported facts.
 
