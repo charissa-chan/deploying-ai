@@ -5,7 +5,7 @@ import requests
 @tool
 def get_definition(s:str=""):
    """
-   Returns definition of the word s from Free Dictionary API.
+   Returns definition of the word s from Free Dictionary API ("https://dictionaryapi.dev/")
    """
  
    url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + s
